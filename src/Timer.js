@@ -9,9 +9,15 @@ class Timer extends Component {
 
   // add your code here
 
+  componentDidMount() {
+    // console.log("DID I MOUNT?")
+    this.interval = setInterval(this.clockTick, 1000)
+  }
 
-
-
+  componentWillUnmount() {
+    console.log("BLOOP")
+    clearInterval(this.interval)
+  }
 
 
 
